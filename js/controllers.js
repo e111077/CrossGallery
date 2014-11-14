@@ -1,12 +1,17 @@
-var pod = crosscloud.connect();
-
 function getAllImages(scope) {
     scope.media = [];
-    pod.query().pattern({appName:"CrossGallery"}).onAllResults(function(items) {
-        var mediaList = items.media;
+    pod.query().filter({appName:"CrossGallery"}).onAllResults(function(item) {
+        owner = item._owner;
+
+        if (owner == pod.getUserId()) {
+            userId = item._id;
+            userMediaList = item.media;
+        }
+
+        var mediaList = item.media;
 
         for (var i = 0; i < mediaList.length; i++) {
-            source.media.push({media : mediaList[i]});
+            scope.media.push({media : mediaList[i]});
         }
     }).start();
 }
