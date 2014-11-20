@@ -4,9 +4,9 @@ angular.module('CrossGallery.controllers', []).
         crossCloud = {};
 
         crossCloud.requestAllMediaData = function() {
-            return $q(function(resolve, reject) {
-                pod.query().filter({appName:"CrossGallery_v0.1"}).onAllResults(function(item){console.log("Asdf");resolve(item)}).start();
-            });
+            var deferred = $q.defer();
+            pod.query().filter({appName:appVersion}).onAllResults(function(item){console.log("Asdf");deferred.notify(item)}).start();
+            return deferred.promise;
         };
 
         return crossCloud;

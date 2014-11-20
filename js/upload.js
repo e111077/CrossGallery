@@ -33,7 +33,7 @@ function handleFileSelect(evt) {
 }
 
 function pushToServer() {
-    pod.push({appName:"CrossGallery_v0.1", dataURL:dataURL});
+    pod.push({appName:appVersion, dataURL:dataURL});
 }
 
 $(document).ready(function() {
