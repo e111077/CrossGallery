@@ -2,7 +2,8 @@ $(document).ready(function() {
   var dataURL;
   var uploadDiv = $('.upload');
   var imagePreview = $('#imagePreview');
-  var uploadButton = $('#uploadButton')
+  var uploadButton = $('#uploadButton');
+  var captionText = $('#captionText');
   
   $('#fileSelector').on('change', handleFileSelect);
   uploadButton.on('click', pushToServer);
@@ -49,8 +50,11 @@ $(document).ready(function() {
       uploadDiv.transition('slide down');
     }
 
+    var caption = captionText.val();
+    captionText.val("");
+
     if (dataURL != undefined) {
-      pod.push({appName:appVersion, dataURL:dataURL});
+      pod.push({appName:appVersion, dataURL:dataURL, caption:caption});
     }
   }
 });

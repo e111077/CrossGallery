@@ -59,6 +59,9 @@
         <div id="uploadButton" class="ui inverted black centered block button">
           Upload
         </div>
+        <div class="ui centered block input text">
+          <input id="captionText" placeholder="Enter a caption" type="text">
+        </div>
       </div>
       <div class="centered" id="imagePreview">
       </div>
@@ -66,7 +69,7 @@
 
     <!-- images -->
     <div ng-app="CrossGallery" ng-controller="mediaController" class="gallery">
-      <a ng-repeat="media in allMedia" class="ui fancybox segment wrap" href="#{{media._id.split('/')[3]}}" owner="{{media._owner}}" rel="gallery">
+      <a ng-repeat="media in allMedia" title="{{media.caption}}" class="ui fancybox segment wrap" href="#{{media._id.split('/')[3]}}" owner="{{media._owner}}" rel="gallery">
         <img class="thumb vcentered" ng-src="{{media.dataURL}}">
 
         <!-- fancybox content -->

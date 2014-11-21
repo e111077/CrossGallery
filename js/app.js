@@ -3,4 +3,4 @@ angular.module('CrossGallery', [
   'CrossGallery.services'
 ]);
 
-appVersion = 'CrossGallery_v0.2';
+appVersion = 'CrossGallery_v0.3';
