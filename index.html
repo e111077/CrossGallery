@@ -77,14 +77,14 @@
       <a ng-repeat="media in allMedia" title="{{media.caption}}" class="ui fancybox segment wrap" href="#{{media.id}}" owner="{{media._owner}}" rel="gallery">
         <img class="thumb vcentered" ng-src="{{media.url}}">
 
-        <!-- comments -->
-        <div ng-repeat="comment in media.comments" class="comment" owner="{{media._owner}}"> 
-          {{comment.content}}
-        </div>
-
         <!-- fancybox content -->
         <div class="hidden">
           <img class="fancyContent" ng-src="{{media.url}}" id="{{media.id}}">
+          <!-- comments -->
+          <div ng-repeat="comment in media.comments" class="comment" owner="{{media._owner}}">
+          asdf
+            {{comment.content}}
+          </div>
         </div>
       </a>
     </div>
