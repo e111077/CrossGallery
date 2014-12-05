@@ -14,14 +14,13 @@ angular.module('CrossGallery.services', []).controller('mediaController', functi
 
     },
     function(media) {
-      // for (var i = 0; i < media.length; i++) {
-      // }
-      var id = media._id;
-      id = id.split('/').join('').split('.').join('').split(':').join('');
-      media.id = id;
-      console.log(media);
+      for (var i = 0; i < media.length; i++) {
+        var id = media[i]._id;
+        id = id.split('/').join('').split('.').join('').split(':').join('');
+        media[i].id = id;
+      }
 
-      $scope.allMedia = [media];
+      $scope.allMedia = media;
     }
   );
 });
