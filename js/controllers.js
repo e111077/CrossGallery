@@ -10,7 +10,9 @@ angular.module('CrossGallery.services', []).controller('mediaController', functi
 
             $scope.allMedia = media;
              
-        }, function(error) {},
+        }, function(error) {
+          
+        },
         function(media) {
             for (var i = 0; i < media.length; i++) {
               var id = media[i]._id;
