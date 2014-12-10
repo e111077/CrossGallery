@@ -138,3 +138,8 @@ a.blue-text:hover {
 .comment {
     padding-top: 10px;
 }
+
+.ui.comments {
+    max-height: 90px;
+    overflow-y: auto;
+}
