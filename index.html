@@ -18,6 +18,8 @@
   <!-- Semantic -->
   <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/semantic.min.css">
   <script src="lib/semantic-ui/javascript/semantic.min.js"></script>
+  <!-- Moment.js -->
+  <script src="lib/moment.js"></script>
   <!-- User -->
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <script src="js/main.js"></script>
@@ -88,8 +90,9 @@
           <div class="fancyContent" id="{{linkableId}}">
             <img src="{{{url}}}">
             <!-- comments -->
-            <div class="ui comments">
-                
+
+            <div class="ui comments" mediaId="{{{_id}}}">
+
             </div>
             
             <!-- submit comments -->
@@ -109,8 +112,18 @@
   
     <!-- COMMENT TEMPLATE -->
     <div class="commentTemplate">
-      <div class="ui segment" commentId="{{_id}}">
-        {{content}}
+      <div class="comment" commentId="{{_id}}">
+        <div class="content">
+          <a class="author blue-text fleft">
+            {{{owner}}}
+          </a>
+          <div class="ui label">
+            {{timestamp}}
+          </div>
+          <div class="text">
+            {{content}}
+          </div>
+        </div>
       </div>
     </div>
 

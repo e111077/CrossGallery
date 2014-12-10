@@ -59,20 +59,26 @@ $(document).ready(function() {
         var comment = commentField.value;
         var mediaId = $(this).attr("mediaId");
 
+        if (comment == "") {
+            alert("Please enter a comment");
+        }
+
+        var comments = $('.fancybox-wrap .comments');
+        // console.log(comments);
+
         pod.push({appName:appVersion, type:"comment",content:comment,mediaId:mediaId}, function(commentObject){
-            var comments = $(this).parent().parent().children(".comments");
 
             // get the comment html from the template
             var commentSource   = $('.hidden.templates .commentTemplate').html();
             var commentTemplate = Handlebars.compile(commentSource);
             var commentHtml = commentTemplate(commentObject);
 
-            comments.innerHTML = comments.innerHTML + commentHtml;
+            comments.append(commentHtml);
+
             commentField.value = "";
 
-        })
 
-    
+        })
 
         }
     );

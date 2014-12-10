@@ -126,3 +126,15 @@ body {
 .comment.submission .button {
     width: 20%;
 }
+
+.blue-text {
+    color: #009FDA !important;
+}
+
+a.blue-text:hover {
+    color: #00BAFF !important;
+}
+
+.comment {
+    padding-top: 10px;
+}

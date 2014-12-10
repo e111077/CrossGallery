@@ -18,7 +18,6 @@ $(function() {
     mediaQuery.onAllResults(function (media) {
       // iterate through each result
       for (var i = 0; i < media.length; i++) {
-        // console.log(i);
         var medium = media[i];
 
         // create a hrefable unique string
@@ -43,6 +42,9 @@ $(function() {
       // iterate through each comment
       for(var j = 0; j < comments.length; j++) {
         var comment     = comments[j];
+        comment.owner = comment._owner.split('/')[2].split('.')[0];
+        console.log(comment.owner);
+        comment.timestamp = moment(comment._lastModified).fromNow();
         // get the comment html
         var commentHtml = commentTemplate(comment);
 
@@ -50,7 +52,6 @@ $(function() {
         var $commentField = $('[mediaId="' + comment.mediaId + '"] .comments');
         // put the comment in the correct pedia object
         $commentField.append(commentHtml);
-        // console.log(j);
       }
     });
 
