@@ -3,10 +3,10 @@ $(function() {
   pod.onLogin(function(userId) {
     var $gallery      = $("#gallery");
     // get the template
-    var mediaSource   = $('.hidden.templates .media').html();
+    var mediaSource   = $('.hidden.templates .mediaTemplate').html();
     var mediaTemplate = Handlebars.compile(mediaSource);
     // get the  comment template
-    var commentSource   = $('.hidden.templates .comment').html();
+    var commentSource   = $('.hidden.templates .commentTemplate').html();
     var commentTemplate = Handlebars.compile(commentSource);
 
     // create a query
@@ -36,10 +36,8 @@ $(function() {
     
     // create a new query for the comments
     var commentQuery  = pod.query();
-
     // filter for comments
     commentQuery.filter({appName:appVersion, type:"comment"});
-
     // handle the comment results
     commentQuery.onAllResults(function(comments) {
       // iterate through each comment

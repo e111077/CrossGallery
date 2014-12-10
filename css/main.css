@@ -101,11 +101,20 @@ body {
     margin: 10px;
 }
 
-.fancyContent {
-    max-width: 1000px !important;
-    max-height: 700px !important;
+.fancyContent img {
+    max-width: 700px !important;
+    max-height: 500px !important;
+}
+
+.fancybox-skin {
+    background-color: #F0F0F0;
 }
 
 #captionText {
     text-align: center;
+}
+
+.comment.submission {
+    padding-top: 10px;
+    display: block;
 }
