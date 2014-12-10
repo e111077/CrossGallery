@@ -17,7 +17,6 @@ commentToHtml = function(comment) {
   // get the  comment template
   var commentSource   = $('.hidden.templates .commentTemplate').html();
   var commentTemplate = Handlebars.compile(commentSource);
-  console.log(comment);
 
   comment.owner = comment._owner.split('/')[2].split('.')[0];
   comment.timestamp = moment(comment._lastModified).fromNow();

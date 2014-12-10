@@ -64,12 +64,11 @@ $(document).ready(function() {
         }
 
         var comments = $('.fancybox-wrap .comments');
-        // console.log(comments);
 
         pod.push({appName:appVersion, type:"comment",content:comment,mediaId:mediaId}, function(commentObject){
 
+            commentObject._owner = pod.podURL;
             var commentHtml = commentToHtml(commentObject);
-
             comments.append(commentHtml);
 
             commentField.value = "";
