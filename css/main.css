@@ -34,6 +34,24 @@ body {
 .centered {
     margin: 0px auto !important;
 }
+.fancybox-prev{
+    left: -80px;
+    width: 30px;
+}
+
+.fancybox-next {
+    right: -80px;
+    width: 30px;
+}
+
+.fancybox-nav:hover span {
+    opacity: 1;
+}
+
+.fancybox-nav span {
+    visibility: visible;
+    opacity: 0.5;
+}
 
 .ntitle {
     font-family: "HelveticaNeue-UltraLight", "Helvetica Neue Light", "Helvetica Neue", Helvetica, "Lucida Grande", sans-serif;

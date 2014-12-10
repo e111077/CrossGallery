@@ -3,6 +3,7 @@ pod = crosscloud.connect();
 
 $(document).ready(function() {
     jQuery('.fancybox').fancybox({
+        margin      : [20, 80, 20, 80],
         helpers : {
             title   : {
                 type: 'outside'
@@ -11,7 +12,7 @@ $(document).ready(function() {
                 width   : 50,
                 height  : 50
             },
-            fitToView : true
+            fitToView : true,   
         }
     });
 
