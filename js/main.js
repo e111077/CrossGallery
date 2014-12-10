@@ -53,4 +53,27 @@ $(document).ready(function() {
             uploadDiv.transition('slide down');
         }
     });
+
+    $(document).on('click', '.comment.submission .submit.button', function() {
+        var commentField = $(this).parent().children(".input").children()[0]
+        var comment = commentField.value;
+        var mediaId = $(this).attr("mediaId");
+
+        pod.push({appName:appVersion, type:"comment",content:comment,mediaId:mediaId}, function(commentObject){
+            var comments = $(this).parent().parent().children(".comments");
+
+            // get the comment html from the template
+            var commentSource   = $('.hidden.templates .commentTemplate').html();
+            var commentTemplate = Handlebars.compile(commentSource);
+            var commentHtml = commentTemplate(commentObject);
+
+            comments.innerHTML = comments.innerHTML + commentHtml;
+            commentField.value = "";
+
+        })
+
+    
+
+        }
+    );
 });
