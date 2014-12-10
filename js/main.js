@@ -68,10 +68,7 @@ $(document).ready(function() {
 
         pod.push({appName:appVersion, type:"comment",content:comment,mediaId:mediaId}, function(commentObject){
 
-            // get the comment html from the template
-            var commentSource   = $('.hidden.templates .commentTemplate').html();
-            var commentTemplate = Handlebars.compile(commentSource);
-            var commentHtml = commentTemplate(commentObject);
+            var commentHtml = commentToHtml(commentObject);
 
             comments.append(commentHtml);
 
