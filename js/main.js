@@ -1,3 +1,6 @@
+appVersion = "CrossGallery_v0.4";
+pod = crosscloud.connect();
+
 $(document).ready(function() {
     jQuery('.fancybox').fancybox({
         helpers : {
