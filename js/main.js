@@ -54,10 +54,21 @@ $(document).ready(function() {
         }
     });
 
+    $(document).on('keyup', '.comment.submission .input input', function(e){
+        if (e.keyCode == 13){
+            $(this).parent().parent().children(".button").trigger("click");
+        }
+    })
+
     $(document).on('click', '.comment.submission .submit.button', function() {
-        var commentField = $(this).parent().children(".input").children()[0]
+        submitComment(this);
+
+        });
+
+    submitComment = function(that){
+        var commentField = $(that).parent().children(".input").children()[0]
         var comment = commentField.value;
-        var mediaId = $(this).attr("mediaId");
+        var mediaId = $(that).attr("mediaId");
 
         if (comment == "") {
             alert("Please enter a comment");
@@ -75,7 +86,6 @@ $(document).ready(function() {
 
 
         })
-
-        }
-    );
+    }
+    
 });
