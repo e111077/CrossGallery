@@ -118,3 +118,11 @@ body {
     padding-top: 10px;
     display: block;
 }
+
+.comment.submission .text {
+    width: 70%;
+}
+
+.comment.submission .button {
+    width: 20%;
+}

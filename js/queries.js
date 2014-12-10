@@ -47,7 +47,7 @@ $(function() {
         var commentHtml = commentTemplate(comment);
 
         // get the place where we will insert comments for this medium
-        var $commentField = $('[ccId="' + comment.mediaId + '"] .comments');
+        var $commentField = $('[mediaId="' + comment.mediaId + '"] .comments');
         // put the comment in the correct pedia object
         $commentField.append(commentHtml);
         // console.log(j);

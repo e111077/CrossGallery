@@ -80,7 +80,7 @@
   <div class="hidden templates">
     <!-- MEDIA TEMPLATE -->
     <div class="mediaTemplate">
-      <a class="ui {{fancybox}} segment wrap" rel="gallery" title="{{title}}" href="#{{linkableId}}" ccId="{{{_id}}}">
+      <a class="ui {{fancybox}} segment wrap" rel="gallery" title="{{title}}" href="#{{linkableId}}" mediaId="{{{_id}}}">
         <img class="thumb vcentered" src="{{{url}}}">
 
         <!-- fancybox content -->
@@ -95,9 +95,9 @@
             <!-- submit comments -->
             <div class="class ui two comment submission fields">
               <div class="ui field input text">
-                <input type="text">
+                <input type="text" placeholder="Write a comment...">
               </div>
-              <div class="ui field submit button">
+              <div class="ui inverted black submit button field">
                 submit
               </div>
             </div>
@@ -109,7 +109,7 @@
   
     <!-- COMMENT TEMPLATE -->
     <div class="commentTemplate">
-      <div class="ui segment">
+      <div class="ui segment" commentId="{{_id}}">
         {{content}}
       </div>
     </div>
